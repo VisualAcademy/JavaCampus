@@ -7,5 +7,11 @@
 </head>
 <body>
     <h2 th:text="${techListTitle}">Tech List</h2>
+    <h3>Primary Technology: <span th:text="${primary.getTitle()}">PT</span></h3>
+    <ul>
+        <li th:each="t : ${technologies}">
+            <span th:text="${t.id}">id</span> - <span th:text="${t.title}">title</span>
+        </li>
+    </ul>
 </body>
 </html>
