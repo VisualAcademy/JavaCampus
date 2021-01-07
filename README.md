@@ -21,3 +21,7 @@ JavaCampus 프로젝트는 https://www.JavaCampus.com 사이트를 처음부터 
 https://youtu.be/8N0AYg_FY4o
 
 
+## 02_03_참고_로컬 컴퓨터에 Git 전역 사용자 이름과 이메일 정보 추가
+
+
+
