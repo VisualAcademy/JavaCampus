@@ -24,4 +24,14 @@ https://youtu.be/8N0AYg_FY4o
 ## 02_03_참고_로컬 컴퓨터에 Git 전역 사용자 이름과 이메일 정보 추가
 
 
+## 02_04_참고_GitHub에 JavaCampus 리포지토리 생성
+
+## 02_05_GitHub 리포지토리를 로컬 PC에 복제하기
+
+## 02_06_JavaCampus_SpringBoot 프로젝트 생성
+
+## 02_07_CreatorController_RestController를 사용하여 프로젝트 제작자 이름을 출력하는 초간단 REST 서비스 구현하기
+
+
+
 
