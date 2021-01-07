@@ -20,6 +20,9 @@ JavaCampus 프로젝트는 https://www.JavaCampus.com 사이트를 처음부터 
 
 https://youtu.be/8N0AYg_FY4o
 
+## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
+
+## 01_02.JavaCampus 가상 컴퓨터에 접속하기
 
 ## 02_03_참고_로컬 컴퓨터에 Git 전역 사용자 이름과 이메일 정보 추가
 
@@ -31,6 +34,11 @@ https://youtu.be/8N0AYg_FY4o
 ## 02_06_JavaCampus_SpringBoot 프로젝트 생성
 
 ## 02_07_CreatorController_RestController를 사용하여 프로젝트 제작자 이름을 출력하는 초간단 REST 서비스 구현하기
+
+
+## 03_01_HomeController 클래스에 hello 메서드 만들고 REST 컨트롤러 만들고 실행하기
+
+
 
 
 
