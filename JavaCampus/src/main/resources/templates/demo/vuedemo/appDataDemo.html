@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vue Demo</title>
+    <script src="https://unpkg.com/vue@next"></script>
+</head>
+<body>
+    <h1>Vue Demo</h1>
+
+    <div id="appdatademo">
+        <h2>{{ title }}</h2>
+    </div>
+
+    <script>
+        const AppDataDemo = {
+            data() {
+                return {
+                    title: 'Vue.js data 메서드 사용 데모'
+                }
+            }
+        };
+        Vue.createApp(AppDataDemo).mount('#appdatademo')
+    </script>
+
+</body>
+</html>
