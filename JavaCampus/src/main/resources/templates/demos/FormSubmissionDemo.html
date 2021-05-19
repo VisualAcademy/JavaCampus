@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 전송 데모</title>
+</head>
+<body>
+    <h1 th:text="${title}">폼 전송 데모 페이지</h1>
+
+    <form action="/Demos/FormSubmissionDemo" method="post">
+        <p>
+            ID: <input type="text" name="id" id="id" />
+        </p>        
+        <p>
+            Name: <input type="text" name="name" id="name" />
+        </p>
+        <input type="submit" value="전송" />
+    </form>
+</body>
+</html>

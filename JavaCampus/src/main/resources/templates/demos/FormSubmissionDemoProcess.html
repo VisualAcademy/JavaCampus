@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 전송 데모</title>
+</head>
+<body>
+    <h1>폼 전송 데모: 처리 페이지</h1>
+
+    ID: <span th:text="${dto.id}"></span><br />
+    Name: <span th:text="${dto.name}"></span><br />
+    
+    <a href="/Demos/FormSubmissionDemo">다시 전송하기</a>
+</body>
+</html>
