@@ -32,4 +32,13 @@ public class JavaCampusApplication {
 			return "박용준";
 		}
 	}
+
+	// 스프링 부트 DevTools 테스트
+	@RestController
+	public class DevToolsTestController {
+		@GetMapping("/devtoolstest")
+		public String index() {
+			return "DevTools Test - Update - Update - Update";
+		}
+	}
 }
