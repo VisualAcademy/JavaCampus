@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help</title>
+</head>
+<body>
+    <h1>Help</h1>
+
+    <h2>연락처 - 순수 HTML 사용</h2>
+    <table>
+        <tr>
+            <td>Title</td>
+            <td>Phone</td>
+        </tr>
+        <tr>
+            <td>대표</td>
+            <td>114</td>
+        </tr>
+        <tr>
+            <td>담당</td>
+            <td>119</td>
+        </tr>
+    </table>
+
+    <h2>연락처 - 컨트롤러에서 넘어온 컬렉션 형태를 반복해서 출력</h2>
+    <table>
+        <tr>
+            <td>#</td>
+            <td>Title</td>
+            <td>Phone</td>
+        </tr>
+        <tr th:each="phone : ${phones}">
+            <td th:text="${phone.id}"></td>
+            <td th:text="${phone.title}"></td>
+            <td th:text="${phone.phoneNumber}"></td>
+        </tr>
+        <!-- <tr>
+            <td>대표</td>
+            <td>114</td>
+        </tr>
+        <tr>
+            <td>담당</td>
+            <td>119</td>
+        </tr> -->
+    </table>
+</body>
+</html>
