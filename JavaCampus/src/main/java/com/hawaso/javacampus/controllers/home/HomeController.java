@@ -1,4 +1,4 @@
-package com.hawaso.javacampus.controllers;
+package com.hawaso.javacampus.controllers.home;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

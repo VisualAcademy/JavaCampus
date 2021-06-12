@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class VueDemoController {
     @GetMapping("demo/VueDemo/appDataDemo")
     public String appData() {
-        return "demo/vuedemo/appDataDemo";
+        return "views/demo/vuedemo/appDataDemo";
     }
 }

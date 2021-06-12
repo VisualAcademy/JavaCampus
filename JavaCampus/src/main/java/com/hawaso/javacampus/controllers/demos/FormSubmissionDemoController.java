@@ -15,12 +15,12 @@ public class FormSubmissionDemoController {
     public String formSubmissionDemo(Model model) {
         model.addAttribute("title", "폼 전송 데모");
         model.addAttribute("dto", new FormSubmissionDto());
-        return "demos/FormSubmissionDemo";
+        return "views/demos/FormSubmissionDemo";
     }
 
     @PostMapping("/Demos/FormSubmissionDemo")
     public String formSubmissionDemo(@ModelAttribute FormSubmissionDto dto, Model model) {
         model.addAttribute("dto", dto);
-        return "demos/FormSubmissionDemoProcess";
+        return "views/demos/FormSubmissionDemoProcess";
     }
 }
