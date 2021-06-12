@@ -9,6 +9,6 @@ import org.springframework.web.bind.annotation.RestController;
 public class PricesController {
     @GetMapping("")
     public String get() {
-        return "Pricing";
+        return "Pricing Web API";
     }
 }

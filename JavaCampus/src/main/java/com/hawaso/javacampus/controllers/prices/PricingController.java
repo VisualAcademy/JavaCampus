@@ -7,6 +7,6 @@ import org.springframework.web.bind.annotation.GetMapping;
 public class PricingController {
     @GetMapping("/prices")
     public String index() {
-        return "prices/pricing";
+        return "views/prices/pricing";
     }
 }
