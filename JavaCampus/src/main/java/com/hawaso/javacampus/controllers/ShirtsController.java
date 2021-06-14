@@ -1,6 +1,7 @@
 package com.hawaso.javacampus.controllers;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.hawaso.javacampus.models.Shirt;
 import com.hawaso.javacampus.repositories.ShirtRepository;
@@ -23,23 +24,27 @@ public class ShirtsController {
     @Autowired
     private ShirtRepository _shirtRepository;
 
+    // 출력
     @GetMapping
     public List<Shirt> getAll() {
         return _shirtRepository.findAll();
     }
 
+    // 상세
     @GetMapping
     @RequestMapping("{id}")
-    public Shirt getById(@PathVariable Integer id) {
-        return _shirtRepository.getOne(id); 
+    public Optional<Shirt> getById(@PathVariable Integer id) {
+        return _shirtRepository.findById(id); 
     }
 
+    // 입력
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
     public Shirt add(@RequestBody final Shirt shirt) {
         return _shirtRepository.saveAndFlush(shirt); 
     }
 
+    // 수정
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Shirt update(@PathVariable Integer id, @RequestBody Shirt shirt) {
         Shirt oldShirt = _shirtRepository.getOne(id);
@@ -47,6 +52,7 @@ public class ShirtsController {
         return _shirtRepository.saveAndFlush(oldShirt);
     }
 
+    // 삭제
     @RequestMapping(value="{id}", method=RequestMethod.DELETE)
     public void delete(@PathVariable Integer id) {
         _shirtRepository.deleteById(id);
