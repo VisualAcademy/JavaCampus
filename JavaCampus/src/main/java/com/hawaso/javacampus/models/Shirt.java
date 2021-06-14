@@ -16,6 +16,10 @@ public class Shirt {
         
     }
 
+    public Shirt(String name) {
+        this.name = name;
+    }
+
     public Integer getId() {
         return id;
     }
