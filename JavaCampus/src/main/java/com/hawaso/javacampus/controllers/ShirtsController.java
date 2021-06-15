@@ -54,7 +54,7 @@ public class ShirtsController {
     }
 
     // 삭제
-    @RequestMapping(value="{id}", method=RequestMethod.DELETE)
+    @RequestMapping(path="/{id}", method=RequestMethod.DELETE)
     public void delete(@PathVariable Integer id) {
         _shirtRepository.deleteById(id);
     }    
