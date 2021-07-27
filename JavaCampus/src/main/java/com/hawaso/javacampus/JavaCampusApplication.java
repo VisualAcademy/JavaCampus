@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.RestController;
 @SpringBootApplication
 //public class JavaCampusApplication extends SpringBootServletInitializer {
 public class JavaCampusApplication {
+	// 스프링 부트 프로젝트의 엔트리 포인트
 	public static void main(String[] args) {
 		SpringApplication.run(JavaCampusApplication.class, args);
 	}
