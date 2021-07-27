@@ -13,7 +13,7 @@ public class Shirt {
     private String name; 
 
     public Shirt() {
-        
+        // Empty
     }
 
     public Shirt(String name) {

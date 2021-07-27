@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
+//@RequestMapping("/api/v1/shirts") // 버전 지정 가능
 @RequestMapping("/api/shirts")
 public class ShirtsController {
     @Autowired
@@ -34,12 +35,13 @@ public class ShirtsController {
     @GetMapping
     @RequestMapping("{id}")
     public Optional<Shirt> getById(@PathVariable Integer id) {
+        //return _shirtRepository.getOne(id); // Optional<Shirt> => Shirt
         return _shirtRepository.findById(id); 
     }
 
     // 입력
     @PostMapping
-    @ResponseStatus(HttpStatus.CREATED)
+    @ResponseStatus(HttpStatus.CREATED) // 201 Created.
     public Shirt add(@RequestBody final Shirt shirt) {
         return _shirtRepository.saveAndFlush(shirt); 
     }
