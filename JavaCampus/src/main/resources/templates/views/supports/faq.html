@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 <head>
 
@@ -8,7 +8,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Modern Business - Start Bootstrap Template</title>
+  <title>FAQ</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -91,6 +91,45 @@
       </li>
       <li class="breadcrumb-item active">FAQ</li>
     </ol>
+
+    <!-- <ul>
+        <li th:each="faq : ${faqs}">
+            <span th:text="${faq.title}"></span>
+        </li>
+    </ul> -->
+
+
+
+    <h3>자주 묻는 질문들</h3>
+    <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
+        <div class="card" th:each="faq : ${faqs}">
+            <div class="card-header" role="tab" id="headingOne" th:id="|heading${faq.id}|">
+                <h5 class="mb-0">
+                    <a data-toggle="collapse" data-parent="#accordion" 
+                        href="#collapseOne" th:href="|#collapse${faq.id}|" 
+                        aria-expanded="true"
+                        aria-controls="collapseOne" th:aria-controls="|collapse${faq.id}|">
+                        <span th:text="${faq.title}">제목 들어오는 곳</span>
+                    </a>
+                </h5>
+            </div>
+            <div id="collapseOne" th:id="|collapse${faq.id}|" class="collapse" role="tabpanel"
+                th:classappend="${faq.id == 1 ? 'show' : ''}" 
+                aria-labelledby="headingOne"  th:aria-labelledby="|heading${faq.id}|">
+                <div class="card-body" th:text="${faq.content}">
+                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid.
+                    3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+                    laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin
+                    coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes
+                    anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings
+                    occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard
+                    of them accusamus labore sustainable VHS.
+                </div>
+            </div>
+        </div>
+    </div>
+
+
 
     <div class="mb-4" id="accordion" role="tablist" aria-multiselectable="true">
       <div class="card">
