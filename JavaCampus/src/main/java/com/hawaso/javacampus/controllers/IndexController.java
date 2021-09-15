@@ -10,4 +10,8 @@ public class IndexController {
     public String index() {
         return "index";
     }
+    @GetMapping(value = "/blank")
+    public String blank() {
+        return "blank";
+    }
 }
