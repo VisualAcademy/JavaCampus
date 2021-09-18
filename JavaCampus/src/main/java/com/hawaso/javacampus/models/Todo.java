@@ -19,6 +19,9 @@ public class Todo {
         this.setTitle(title);
         this.setIsDone(isDone);
     }
+    public Integer getId() {
+        return id; 
+    }
     public String getTitle() {
         return title;
     }
