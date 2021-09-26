@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="views/shared/_layout">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Index</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container">
+
+            <h1>Employee Manager</h1>
+
+            <div class="row">
+                <div class="hidden-xs col-sm-6 col-md-8">
+                    <a href="/employee/create">Create New</a>
+                </div>
+                <div class="col-xs-12 col-sm-6 col-md-4 text-right">
+                    <form action="#" th:action="@{/employee/search}" method="GET">
+                        <div class="input-group mb-2">
+                            <input type="search" class="form-control" placeholder="Employee" aria-label="Employee"
+                                aria-describedby="Employee Search" name="searchQuery">
+                            <div class="input-group-append">
+                                <button class="btn btn-outline-secondary" type="submit" id="btnSearch">검색</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>
+                            FirstName
+                        </th>
+                        <th>
+                            LastName
+                        </th>
+                        <th>
+                            Role
+                        </th>
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="vm : ${employees}">
+                        <td th:text="${vm.firstName}">
+                            YJ
+                        </td>
+                        <td th:text="${vm.lastName}">
+                            Park
+                        </td>
+                        <td th:text="${vm.role}">
+                            Users
+                        </td>
+                        <td>
+                            <a th:href="@{/employee/edit(id=${vm.id})}">Edit</a> |
+                            <!-- <a href="/Employee/Details/2">Details</a> | -->
+                            <a th:href="@{/employee/delete(id=${vm.id})}"
+                                onclick="return window.confirm('정말로 삭제하시겠습니까?')">Delete</a>
+                        </td>
+                    </tr>
+                    <!-- <tr>
+                        <td>
+                            Test
+                        </td>
+                        <td>
+                            Kim
+                        </td>
+                        <td>
+                            Users
+                        </td>
+                        <td>
+                            <a href="/employee/edit/3">Edit</a> |
+                            <a href="/employee/details/3">Details</a> |
+                            <a href="/employee/delete/3">Delete</a>
+                        </td>
+                    </tr> -->
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+</body>
+
+</html>
