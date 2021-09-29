@@ -1,4 +1,4 @@
-# JavaCampus
+# JavaCampus - 자바캠퍼스 
 https://www.javacampus.com 웹사이트 전체 소스 모음
 
 ## 유튜브 자바캠퍼스 채널
