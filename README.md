@@ -1,6 +1,8 @@
 # JavaCampus - 자바캠퍼스 
 https://www.javacampus.com 웹사이트 전체 소스 모음
 
+[![Build status](https://dev.azure.com/redplus/JavaCampus/_apis/build/status/JavaCampus-Maven-CI)](https://dev.azure.com/redplus/JavaCampus/_build/latest?definitionId=40)
+
 ## 유튜브 자바캠퍼스 채널
 
 유튜브 자바캠퍼스 채널을 통해서 현재 프로젝트를 만드는 과정을 지속적으로 강좌로 제공합니다.
