@@ -20,10 +20,12 @@ import org.thymeleaf.util.StringUtils;
 public class EmployeeController {
     private final EmployeeService _service;
 
+    // 생성자의 매개 변수로 EmployeeService 클래스 주입 
     public EmployeeController(EmployeeService service) {
         this._service = service;
     }
 
+    // 리스트 페이지 출력
     @GetMapping(value = {"", "/index", "/list"})
     public String index(Model model) {
         var employees = _service.getAll();
@@ -31,6 +33,7 @@ public class EmployeeController {
         return "views/employees/index";
     }
     
+    // 입력 폼 출력
     @GetMapping(value = "/create")
     public String create(Model model) {
 
@@ -39,6 +42,7 @@ public class EmployeeController {
         return "views/employees/create";
     }
 
+    // 저장: 데이터 입력과 수정 기능을 동시에 처리
     @PostMapping("/save")
     public String save(@Valid @ModelAttribute("employee") Employee model, BindingResult br) {
         if (br.hasErrors()) {
@@ -54,12 +58,14 @@ public class EmployeeController {
         }
     }
 
+    // 삭제 기능 구현
     @GetMapping("/delete")
     public String delete(@RequestParam("id") int id) {
         _service.delete(id);
         return "redirect:/employee";
     }
 
+    // 수정 폼 출력
     @GetMapping("/edit")
     public String edit(@RequestParam("id") int id, Model model) {
         var employee = _service.getById(id);
@@ -67,6 +73,7 @@ public class EmployeeController {
         return "views/employees/create";
     }
 
+    // 검색 결과 리스트 출력
     @GetMapping("/search")
     public String search(@RequestParam("searchQuery") String searchQuery, Model model) {
         if (searchQuery.trim().isEmpty() && StringUtils.isEmpty(searchQuery)) {
