@@ -42,10 +42,14 @@ public class EmployeeController {
     @PostMapping("/save")
     public String save(@Valid @ModelAttribute("employee") Employee model, BindingResult br) {
         if (br.hasErrors()) {
+            // 유효성 검사들 통과하지 못하면 다시 입력 폼으로 이동
             return "views/employees/create";
         }
         else {
+            // 유효성 검사 통과하면 데이터 저장 또는 수정
             _service.save(model);
+
+            // 리스트 페이지로 이동
             return "redirect:/employee/list";
         }
     }
@@ -71,6 +75,8 @@ public class EmployeeController {
         else {
             var employees = _service.searchAll(searchQuery, searchQuery);
             model.addAttribute("employees", employees);
+
+            // 리스트 페이지로 이동
             return "views/employees/index";
         }
     }
