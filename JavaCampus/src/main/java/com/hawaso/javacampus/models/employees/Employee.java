@@ -14,8 +14,7 @@ import javax.validation.constraints.Size;
 @Table(name = "Employees")
 public class Employee {
     @Id 
-    //@GeneratedValue(strategy = GenerationType.IDENTITY)
-    @GeneratedValue
+    @GeneratedValue // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
     private Integer id;
     
@@ -33,6 +32,7 @@ public class Employee {
     private String role;
 
     public Employee() {
+        // Empty
     }
 
     public Employee(String firstName, String lastName, String role) {
@@ -41,44 +41,39 @@ public class Employee {
         this.role = role;
     }
 
+    public Integer getId() {
+        return this.id;
+    }
+    public void setId(Integer id) {
+        this.id = id;
+    }        
+
     public String getName() {
         return this.firstName + " " + this.lastName;
     }
-
     public void setName(String name) {
         String[] parts = name.split(" ");
         this.firstName = parts[0];
         this.lastName = parts[1];
     }
 
-    public Integer getId() {
-        return this.id;
-    }
-
     public String getFirstName() {
         return this.firstName;
     }
-
-    public String getLastName() {
-        return this.lastName;
-    }
-
-    public String getRole() {
-        return this.role;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
     public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
+    public String getLastName() {
+        return this.lastName;
+    }    
     public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
+    public String getRole() {
+        return this.role;
+    }    
     public void setRole(String role) {
         this.role = role;
     }
@@ -90,8 +85,13 @@ public class Employee {
         if (!(o instanceof Employee))
             return false;
         Employee employee = (Employee) o;
-        return Objects.equals(this.id, employee.id) && Objects.equals(this.firstName, employee.firstName)
-                && Objects.equals(this.lastName, employee.lastName) && Objects.equals(this.role, employee.role);
+        return 
+            Objects.equals(this.id, employee.id) 
+            && 
+            Objects.equals(this.firstName, employee.firstName)
+            && 
+            Objects.equals(this.lastName, employee.lastName) 
+            && Objects.equals(this.role, employee.role);
     }
 
     @Override
@@ -101,7 +101,8 @@ public class Employee {
 
     @Override
     public String toString() {
-        return "Employee{" + "id=" + this.id + ", firstName='" + this.firstName + '\'' + ", lastName='" + this.lastName
-                + '\'' + ", role='" + this.role + '\'' + '}';
+        return "Employee{" + "id=" + this.id + ", firstName='" 
+        + this.firstName + '\'' + ", lastName='" + this.lastName
+        + '\'' + ", role='" + this.role + '\'' + '}';
     }
 }
