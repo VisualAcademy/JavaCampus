@@ -10,6 +10,7 @@ import javax.persistence.Table;
 @Entity
 @Table(name = "Notices")
 public class Notice {
+    // 필드
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
@@ -19,6 +20,7 @@ public class Notice {
     private String title;
     private String content;     
 
+    // 생성자
     public Notice() {
     }
     public Notice(Integer id, String name, String title, String content) {
@@ -28,22 +30,11 @@ public class Notice {
         this.setContent(content);
     }
 
+    // 게터와 세터 
     public Integer getId() {
         return id; 
     }
 
-    public String getContent() {
-        return content;
-    }
-    public void setContent(String content) {
-        this.content = content;
-    }
-    public String getTitle() {
-        return title;
-    }
-    public void setTitle(String title) {
-        this.title = title;
-    }
     public String getName() {
         return name;
     }
@@ -51,6 +42,21 @@ public class Notice {
         this.name = name;
     }
     
+    public String getTitle() {
+        return title;
+    }
+    public void setTitle(String title) {
+        this.title = title;
+    }
+    
+    public String getContent() {
+        return content;
+    }
+    public void setContent(String content) {
+        this.content = content;
+    }
+    
+    // ToString 메서드 오버라이드 
     @Override
     public String toString() {
         return super.toString();

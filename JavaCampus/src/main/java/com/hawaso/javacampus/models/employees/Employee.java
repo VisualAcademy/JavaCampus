@@ -13,6 +13,7 @@ import javax.validation.constraints.Size;
 @Entity
 @Table(name = "Employees")
 public class Employee {
+    // 필드
     @Id 
     @GeneratedValue // @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "Id")
@@ -31,6 +32,7 @@ public class Employee {
     @Column(name = "Role")
     private String role;
 
+    // 생성자
     public Employee() {
         // Empty
     }
@@ -41,6 +43,7 @@ public class Employee {
         this.role = role;
     }
 
+    // 게터와 세터 
     public Integer getId() {
         return this.id;
     }
@@ -99,6 +102,7 @@ public class Employee {
         return Objects.hash(this.id, this.firstName, this.lastName, this.role);
     }
 
+    // ToString 메서드 오버라이드 
     @Override
     public String toString() {
         return "Employee{" + "id=" + this.id + ", firstName='" 
