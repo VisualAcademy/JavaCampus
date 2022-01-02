@@ -7,23 +7,32 @@ import org.springframework.web.bind.annotation.RequestMapping;
 @Controller
 @RequestMapping("/notice")
 public class NoticeController {
-    @GetMapping(value = {"", "/index"})    
+    // 출력
+    @GetMapping(value = { "", "/index" })
     public String index() {
         return "views/notices/index";
     }
-    @GetMapping(value = "/create")    
+
+    // 입력
+    @GetMapping(value = "/create")
     public String create() {
         return "views/notices/create";
     }
-    @GetMapping("/details")    
+
+    // 상세
+    @GetMapping("/details")
     public String details() {
         return "views/notices/details";
     }
-    @GetMapping("/edit")    
+
+    // 수정
+    @GetMapping("/edit")
     public String edit() {
         return "views/notices/edit";
     }
-    @GetMapping("/delete")    
+
+    // 삭제
+    @GetMapping("/delete")
     public String delete() {
         return "views/notices/delete";
     }
