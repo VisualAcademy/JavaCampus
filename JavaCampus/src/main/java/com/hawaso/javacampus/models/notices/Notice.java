@@ -6,6 +6,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.NotBlank;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name = "Notices")
@@ -16,8 +18,17 @@ public class Notice {
     @Column(name = "Id")
     private Integer id;
     
+    @NotBlank(message = "Name을 입력하세요.")
+    @Column(name = "Name")
+    @Size(min = 2, max = 25)
     private String name; 
+
+    @NotBlank(message = "Title을 입력하세요.")
+    @Column(name = "Title")
+    @Size(min = 1, max = 150)
     private String title;
+
+    @Column(name = "Content")
     private String content;     
 
     // 생성자
