@@ -49,8 +49,8 @@ public class ShirtsController {
     // 수정
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Shirt update(@PathVariable Integer id, @RequestBody Shirt shirt) {
-        //var oldShirt = _shirtRepository.getById(id);
-        var oldShirt = _shirtRepository.getOne(id);
+        //var oldShirt = _shirtRepository.getOne(id);
+        var oldShirt = _shirtRepository.getById(id);
         BeanUtils.copyProperties(shirt, oldShirt, "id");
         return _shirtRepository.saveAndFlush(oldShirt);
     }

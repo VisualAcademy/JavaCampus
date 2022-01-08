@@ -51,8 +51,8 @@ public class TodosController {
     @PutMapping
     @RequestMapping(value = "{id}", method = RequestMethod.PUT)
     public Todo update(@PathVariable Integer id, @RequestBody Todo model) {
-        //var oldTodo = _todoRepository.getById(id);
-        var oldModel = _todoRepository.getOne(id); 
+        //var oldModel = _todoRepository.getOne(id); 
+        var oldModel = _todoRepository.getById(id);
         oldModel.setTitle(model.getTitle());
         oldModel.setIsDone(model.getIsDone());
         //BeanUtils.copyProperties(model, oldModel, "id"); // 더 편한 방법 제공
