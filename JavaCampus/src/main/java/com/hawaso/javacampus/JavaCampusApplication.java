@@ -1,7 +1,7 @@
 package com.hawaso.javacampus;
 
-import com.hawaso.javacampus.models.Shirt;
-import com.hawaso.javacampus.repositories.ShirtRepository;
+import com.hawaso.javacampus.models.shirts.Shirt;
+import com.hawaso.javacampus.repositories.shirts.ShirtRepository;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;

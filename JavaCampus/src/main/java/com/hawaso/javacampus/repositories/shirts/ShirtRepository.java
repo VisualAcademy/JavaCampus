@@ -1,6 +1,6 @@
-package com.hawaso.javacampus.repositories;
+package com.hawaso.javacampus.repositories.shirts;
 
-import com.hawaso.javacampus.models.Shirt;
+import com.hawaso.javacampus.models.shirts.Shirt;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

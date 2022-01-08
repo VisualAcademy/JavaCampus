@@ -1,6 +1,6 @@
-package com.hawaso.javacampus.repositories;
+package com.hawaso.javacampus.repositories.todos;
 
-import com.hawaso.javacampus.models.Todo;
+import com.hawaso.javacampus.models.todos.Todo;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

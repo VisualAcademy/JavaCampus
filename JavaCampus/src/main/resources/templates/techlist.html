@@ -6,7 +6,10 @@
     <title>Tech List</title>
 </head>
 <body>
+    
+    <!-- Thymeleaf Variable Expressions: ${...} -->
     <h2 th:text="${techListTitle}">Tech List</h2>
+
     <h3>Primary Technology: <span th:text="${primary.getTitle()}">PT</span></h3>
     <ul>
         <li th:each="t : ${technologies}">

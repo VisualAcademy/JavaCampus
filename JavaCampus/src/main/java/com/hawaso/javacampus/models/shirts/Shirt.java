@@ -1,4 +1,4 @@
-package com.hawaso.javacampus.models;
+package com.hawaso.javacampus.models.shirts;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;

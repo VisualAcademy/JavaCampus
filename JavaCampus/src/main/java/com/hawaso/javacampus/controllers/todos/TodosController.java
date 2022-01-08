@@ -1,10 +1,10 @@
-package com.hawaso.javacampus.controllers;
+package com.hawaso.javacampus.controllers.todos;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.hawaso.javacampus.models.Todo;
-import com.hawaso.javacampus.repositories.TodoRepository;
+import com.hawaso.javacampus.models.todos.Todo;
+import com.hawaso.javacampus.repositories.todos.TodoRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

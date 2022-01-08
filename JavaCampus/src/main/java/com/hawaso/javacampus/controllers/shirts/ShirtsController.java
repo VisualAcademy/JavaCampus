@@ -1,10 +1,10 @@
-package com.hawaso.javacampus.controllers;
+package com.hawaso.javacampus.controllers.shirts;
 
 import java.util.List;
 import java.util.Optional;
 
-import com.hawaso.javacampus.models.Shirt;
-import com.hawaso.javacampus.repositories.ShirtRepository;
+import com.hawaso.javacampus.models.shirts.Shirt;
+import com.hawaso.javacampus.repositories.shirts.ShirtRepository;
 
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;

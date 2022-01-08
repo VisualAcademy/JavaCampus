@@ -1,5 +1,5 @@
 // 모델 클래스 
-package com.hawaso.javacampus.models;
+package com.hawaso.javacampus.models.todos;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
