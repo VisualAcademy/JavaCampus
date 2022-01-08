@@ -22,12 +22,18 @@
                 <div class="col-md-4">
                     <form action="#" th:action="@{/employee/save}" th:object="${employee}" method="post">
 
+                        <!-- 숨김 필드로 id 값 전달 -->
                         <input type="hidden" th:field="*{id}" />
 
                         <div class="form-group">
                             <label class="control-label" for="FirstName">FirstName</label>
                             <input class="form-control" type="text" data-val="true"
-                                data-val-required="The FirstName field is required." th:field="*{firstName}" />
+                                data-val-required="The FirstName field is required." 
+                                th:field="*{firstName}" 
+                            
+                                th:classappend="${#fields.hasErrors('firstName')} ? 'is-invalid' : ''"
+                                
+                            />
                             <span class="text-danger field-validation-valid" data-valmsg-for="FirstName"
                                 data-valmsg-replace="true" th:if="${#fields.hasErrors('firstName')}"
                                 th:errors="*{firstName}">*</span>

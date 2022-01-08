@@ -37,6 +37,7 @@ public class EmployeeController {
     @GetMapping(value = "/create")
     public String create(Model model) {
 
+        // 빈 모델 오브젝트를 뷰 페이지에 employee 이름으로 전달 
         model.addAttribute("employee", new Employee());
 
         return "views/employees/create";
