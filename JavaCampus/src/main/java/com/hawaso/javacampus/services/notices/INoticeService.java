@@ -7,7 +7,7 @@ import com.hawaso.javacampus.models.notices.Notice;
 // INoticeService 인터페이스 설계 
 public interface INoticeService {
     // 입력과 수정
-    public void save(Notice model); // add(), update()
+    public Notice save(Notice model); // add(), update()
     // 출력
     public List<Notice> getAll(); // findAll()
     // 상세
