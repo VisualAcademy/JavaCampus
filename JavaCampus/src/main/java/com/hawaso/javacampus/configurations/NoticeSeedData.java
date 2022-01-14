@@ -16,9 +16,9 @@ public class NoticeSeedData {
     @Bean
     public CommandLineRunner initNotices(NoticeService service) {
         return args -> {
-            _log.info("Preloading" + service.save(new Notice("홍길동", "제목1", "내용1")));
-            _log.info("Preloading" + service.save(new Notice("백두산", "제목2", "내용2")));
-            _log.info("Preloading" + service.save(new Notice("임꺽정", "제목3", "내용3")));
+            _log.info("Preloading: " + service.save(new Notice("홍길동", "제목1", "내용1")));
+            _log.info("Preloading: " + service.save(new Notice("백두산", "제목2", "내용2")));
+            _log.info("Preloading: " + service.save(new Notice("임꺽정", "제목3", "내용3")));
         };
     }
 }
