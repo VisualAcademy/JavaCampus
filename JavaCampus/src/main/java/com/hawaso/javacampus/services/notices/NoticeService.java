@@ -7,7 +7,7 @@ import com.hawaso.javacampus.repositories.notices.INoticeRepository;
 
 import org.springframework.stereotype.Service;
 
-@Service
+@Service // 현재 클래스를 서비스 클래스로 등록 => 컨트롤러 클래스에서 바로 주입 사용 가능 
 public class NoticeService implements INoticeService {
     private final INoticeRepository _repository;
 
