@@ -13,8 +13,17 @@ public class Enrollment {
 
     private Integer courseId;
     private Integer studentId;
+
+    private Grade grade; // private Integer grade; // 학점 
+
     public Integer getCourseId() {
         return courseId;
+    }
+    public Grade getGrade() {
+        return grade;
+    }
+    public void setGrade(Grade grade) {
+        this.grade = grade;
     }
     public Integer getStudentId() {
         return studentId;

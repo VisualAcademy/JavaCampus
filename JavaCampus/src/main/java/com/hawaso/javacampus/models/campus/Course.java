@@ -9,12 +9,22 @@ import javax.persistence.Id;
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer id; // 일련번호 
 
-    private String title;
+    private String title; // 제목 
+
+    private Integer credits; // 학점
 
     public String getTitle() {
         return title;
+    }
+
+    public Integer getCredits() {
+        return credits;
+    }
+
+    public void setCredits(Integer credits) {
+        this.credits = credits;
     }
 
     public void setTitle(String title) {
