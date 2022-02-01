@@ -16,6 +16,10 @@ public class Enrollment {
 
     private Grade grade; // private Integer grade; // 학점 
 
+    public Enrollment() {
+        
+    }
+
     public Integer getCourseId() {
         return courseId;
     }
