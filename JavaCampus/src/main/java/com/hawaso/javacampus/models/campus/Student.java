@@ -8,6 +8,8 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+
 @Entity(name = "Students")
 public class Student {
     @Id
@@ -17,6 +19,7 @@ public class Student {
     private String name;
 
     @ManyToMany(mappedBy = "students")
+    @JsonIgnore
     private List<Course> courses;
 
     public Student() {
