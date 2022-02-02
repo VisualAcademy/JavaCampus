@@ -2,6 +2,7 @@ package com.hawaso.javacampus.models.campus;
 
 import java.util.List;
 
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -9,15 +10,20 @@ import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
 
 @Entity(name = "Courses")
+@Table(name = "Courses")
 public class Course {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "Id")
     private Integer id; // 일련번호 
 
+    @Column(name = "Title")
     private String title; // 제목 
 
+    @Column(name = "Credits")
     private Integer credits; // 학점
 
     @ManyToMany
@@ -35,6 +41,10 @@ public class Course {
         return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    } 
+
     public Integer getCredits() {
         return credits;
     }
@@ -42,8 +52,4 @@ public class Course {
     public void setCredits(Integer credits) {
         this.credits = credits;
     }
-
-    public void setTitle(String title) {
-        this.title = title;
-    } 
 }

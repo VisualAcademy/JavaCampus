@@ -51,6 +51,7 @@
 			</exclusions>
 		</dependency>
 
+
 		<!-- 데이터베이스 설정 -->
 		<dependency>
 			<groupId>org.springframework.boot</groupId>
