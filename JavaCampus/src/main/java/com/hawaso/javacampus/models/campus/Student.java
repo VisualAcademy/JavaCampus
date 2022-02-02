@@ -35,6 +35,14 @@ public class Student {
         
     }
 
+    public Integer getId() {
+        return id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
+    }
+
     public Student(String firstName, String lastName, List<Course> courses) {
         this.firstName = firstName;
         this.lastName = lastName;
