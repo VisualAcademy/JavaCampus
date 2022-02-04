@@ -15,8 +15,9 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMethod;
 
 @RestController
-@RequestMapping("/api/students")
+@RequestMapping("/api/students") // EmployeesController 컨트롤러에서는 @RequestMapping 생략한 방식 사용 
 public class StudentsController {
+    // Repository 인터페이스 주입(필드 주입 방식 사용할 때에는 @Autowired 사용)
     @Autowired
     private StudentRepository _repository;
 
@@ -36,6 +37,7 @@ public class StudentsController {
         return _repository.saveAndFlush(student);
     }
 
+    //@DeleteMapping("/api/students/{id}")
     @RequestMapping(value="{id}", method=RequestMethod.DELETE)
     public void delete(@PathVariable Integer id) {
         _repository.deleteById(id);        
