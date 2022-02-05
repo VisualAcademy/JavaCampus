@@ -1,6 +1,6 @@
-package com.hawaso.javacampus.repositories.noodles;
+package com.hawaso.javacampus.repositories.buffets;
 
-import com.hawaso.javacampus.models.buffet.Noodle;
+import com.hawaso.javacampus.models.buffets.Noodle;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 

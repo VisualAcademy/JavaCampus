@@ -1,4 +1,4 @@
-package com.hawaso.javacampus.models.buffet;
+package com.hawaso.javacampus.models.buffets;
 
 public class Noodle {
     private Integer id; 
