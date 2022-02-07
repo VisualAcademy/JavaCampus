@@ -12,7 +12,17 @@
 <body>
     <div layout:fragment="content">
         <div class="container">
-            <h1>공지사항 들어오는 곳</h1>
+
+            <h1>공지사항</h1>
+
+            <table class="table">
+                <tr th:each="vm : ${models}">
+                    <td th:text="${vm.id}">id</td>
+                    <td th:text="${vm.title}">title</td>
+                    <td th:text="${vm.name}">name</td>
+                </tr>
+            </table>
+            
         </div>
     </div>
 </body>

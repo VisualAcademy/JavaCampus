@@ -1,15 +1,27 @@
 package com.hawaso.javacampus.controllers.notices;
 
+import com.hawaso.javacampus.services.notices.NoticeService;
+
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
 @RequestMapping("/notice")
 public class NoticeController {
-    // 출력
-    @GetMapping(value = { "", "/index" })
-    public String index() {
+    private final NoticeService _service;
+
+    // 생성자의 매개 변수로 NoticeService 클래스 주입 
+    public NoticeController(NoticeService service) {
+        this._service = service;
+    }
+
+    // 출력: 리스트 페이지 출력 
+    @GetMapping(value = { "", "/index", "/list" })
+    public String index(Model model) {
+        var models = _service.getAll(); 
+        model.addAttribute("models", models); 
         return "views/notices/index";
     }
 
