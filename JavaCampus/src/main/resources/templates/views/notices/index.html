@@ -15,14 +15,36 @@
 
             <h1>공지사항</h1>
 
-            <table class="table">
-                <tr th:each="vm : ${models}">
-                    <td th:text="${vm.id}">id</td>
-                    <td th:text="${vm.title}">title</td>
-                    <td th:text="${vm.name}">name</td>
-                </tr>
+            <table class="table table-bordered table-hover">
+                <colgroup>
+                    <col style="width: 70px;" />
+                    <col style="width: 300px;" />
+                    <col style="width: 100px;" />
+                    <col style="width: auto;" />
+                    <col style="width: 250px;" />
+                </colgroup>
+                <thead class="thead-light">
+                    <tr>
+                        <th>번호</th>
+                        <th>제목</th>
+                        <th>작성자</th>
+                        <th>&nbsp;</th>
+                        <th>Admin</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr th:each="vm : ${models}">
+                        <td th:text="${vm.id}">id</td>
+                        <td th:text="${vm.title}">title</td>
+                        <td th:text="${vm.name}">name</td>
+                        <td>&nbsp;</td>
+                        <td>
+
+                        </td>
+                    </tr>
+                </tbody>
             </table>
-            
+
         </div>
     </div>
 </body>
