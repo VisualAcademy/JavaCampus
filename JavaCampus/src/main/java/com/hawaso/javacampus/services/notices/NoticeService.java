@@ -9,22 +9,32 @@ import org.springframework.stereotype.Service;
 
 @Service // 현재 클래스를 서비스 클래스로 등록 => 컨트롤러 클래스에서 바로 주입 사용 가능 
 public class NoticeService implements INoticeService {
+    // @Autowired 생략
     private final INoticeRepository _repository;
 
     public NoticeService(INoticeRepository repository) {
         this._repository = repository;
     }
 
+    // 입력과 수정 
     @Override
     public Notice save(Notice model) {
         return _repository.save(model);
     }
 
+    // 입력
+    public void add(Notice model) {
+        _repository.save(model); 
+    }
+
+    // 출력
     @Override
     public List<Notice> getAll() {
+        //List<Notice> notices = new ArrayList<>(); _repository.findAll().forEach(notices::add);
         return _repository.findByOrderByIdDesc(); 
     }
 
+    // 상세
     @Override
     public Notice getById(int id) {
         var result = _repository.findById(id);
@@ -35,6 +45,11 @@ public class NoticeService implements INoticeService {
         else {
             throw new RuntimeException("No Data."); // NoticeNotFoundException...
         }
+    }
+
+    // 수정
+    public void update(Integer id, Notice model) {
+        _repository.save(model); 
     }
 
     @Override
