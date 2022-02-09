@@ -1,11 +1,16 @@
 package com.hawaso.javacampus.controllers.notices;
 
+import javax.validation.Valid;
+
 import com.hawaso.javacampus.models.notices.Notice;
 import com.hawaso.javacampus.services.notices.NoticeService;
 
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.ModelAttribute;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 @Controller
@@ -32,6 +37,18 @@ public class NoticeController {
         // 빈 모델 오브젝트를 뷰 페이지에 dto, model, notice 등의 이름으로 전달 
         model.addAttribute("dto", new Notice());
         return "views/notices/create";
+    }
+
+    // 저장
+    @PostMapping("/save")
+    public String save(@Valid @ModelAttribute("dto") Notice model, BindingResult br) {
+        if (br.hasErrors()) {
+            return "views/notices/create";
+        }
+        else {
+            _service.save(model); 
+            return "redirect:/notice";
+        }
     }
 
     // 상세
