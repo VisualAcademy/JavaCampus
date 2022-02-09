@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 @RequestMapping("/notice")
@@ -72,4 +73,11 @@ public class NoticeController {
     public String delete() {
         return "views/notices/delete";
     }
+
+    // 삭제 처리
+    @GetMapping("/deleteprocess")
+    public String deleteprocess(@RequestParam("id") int id) {
+        _service.delete(id);
+        return "redirect:/notice";
+    }   
 }
