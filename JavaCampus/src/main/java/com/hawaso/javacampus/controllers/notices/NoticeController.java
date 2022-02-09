@@ -57,13 +57,13 @@ public class NoticeController {
         }
     }
 
-    // 상세
+    // 상세 페이지
     @GetMapping("/details")
     public String details() {
         return "views/notices/details";
     }
 
-    // 수정
+    // 수정 페이지 
     @GetMapping("/edit")
     public String edit() {
         return "views/notices/edit";
@@ -77,7 +77,7 @@ public class NoticeController {
         return "views/notices/create";
     }
 
-    // 삭제
+    // 삭제 페이지 
     @GetMapping("/delete")
     public String delete() {
         return "views/notices/delete";
