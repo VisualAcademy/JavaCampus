@@ -16,17 +16,17 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 @Table(name = "Students")
 public class Student {
     @Id
-    @Column(name = "Id")
+    @Column(name = "Id", nullable = false, updatable = false)
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
     
-    @Column(name = "FirstName")
+    @Column(name = "FirstName", nullable = false)
     private String firstName;
     
     @Column(name = "LastName")
     private String lastName; 
 
-    @Column(name = "Email")
+    @Column(name = "Email", nullable = true)
     private String email; 
 
     @ManyToMany(mappedBy = "students")
