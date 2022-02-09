@@ -5,6 +5,7 @@ import javax.validation.Valid;
 import com.hawaso.javacampus.models.notices.Notice;
 import com.hawaso.javacampus.services.notices.NoticeService;
 
+import org.apache.groovy.parser.antlr4.util.StringUtils;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -88,4 +89,19 @@ public class NoticeController {
         _service.delete(id);
         return "redirect:/notice";
     }   
+
+    // 검색 결과 리스트 출력
+    @GetMapping("/search")
+    public String search(@RequestParam("searchQuery") String searchQuery, Model model) {
+        if (searchQuery.trim().isEmpty() && StringUtils.isEmpty(searchQuery)) {
+            return "redirect:/notice";
+        }
+        else {
+            var models = _service.searchAll(searchQuery, searchQuery);
+            model.addAttribute("models", models);
+
+            // 리스트 페이지에 검색 결과 컬렉션 표시 
+            return "views/notices/index";
+        }
+    }
 }
