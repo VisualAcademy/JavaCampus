@@ -39,14 +39,18 @@ public class NoticeController {
         return "views/notices/create";
     }
 
-    // 저장
+    // 저장: 데이터 입력과 수정 기능을 동시에 처리
     @PostMapping("/save")
     public String save(@Valid @ModelAttribute("dto") Notice model, BindingResult br) {
         if (br.hasErrors()) {
+            // 유효성 검사들 통과하지 못하면 다시 입력 폼으로 이동
             return "views/notices/create";
         }
         else {
+            // 유효성 검사 통과하면 데이터 저장 또는 수정
             _service.save(model); 
+
+            // 리스트 페이지로 이동
             return "redirect:/notice";
         }
     }
