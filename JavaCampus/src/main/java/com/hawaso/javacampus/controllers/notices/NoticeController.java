@@ -1,5 +1,6 @@
 package com.hawaso.javacampus.controllers.notices;
 
+import com.hawaso.javacampus.models.notices.Notice;
 import com.hawaso.javacampus.services.notices.NoticeService;
 
 import org.springframework.stereotype.Controller;
@@ -25,9 +26,11 @@ public class NoticeController {
         return "views/notices/index";
     }
 
-    // 입력
+    // 입력: 입력 폼 출력 
     @GetMapping(value = "/create")
-    public String create() {
+    public String create(Model model) {
+        // 빈 모델 오브젝트를 뷰 페이지에 dto, model, notice 등의 이름으로 전달 
+        model.addAttribute("dto", new Notice());
         return "views/notices/create";
     }
 
