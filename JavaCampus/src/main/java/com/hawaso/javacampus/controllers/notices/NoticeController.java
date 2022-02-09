@@ -68,6 +68,14 @@ public class NoticeController {
         return "views/notices/edit";
     }
 
+    // 수정 폼 출력: 기존 데이터 함께 로드 
+    @GetMapping("/editform")
+    public String editform(@RequestParam("id") int id, Model model) {
+        var dto = _service.getById(id);
+        model.addAttribute("dto", dto);
+        return "views/notices/create";
+    }
+
     // 삭제
     @GetMapping("/delete")
     public String delete() {
