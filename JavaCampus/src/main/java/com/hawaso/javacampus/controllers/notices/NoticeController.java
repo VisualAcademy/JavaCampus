@@ -59,7 +59,9 @@ public class NoticeController {
 
     // 상세 페이지
     @GetMapping("/details")
-    public String details() {
+    public String details(@RequestParam("id") int id, Model model) {
+        var vm = _service.getById(id);
+        model.addAttribute("vm", vm); 
         return "views/notices/details";
     }
 
