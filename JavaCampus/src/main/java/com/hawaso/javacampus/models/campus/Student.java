@@ -12,6 +12,7 @@ import javax.persistence.Table;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 
+// 엔터티 클래스 관련 주요 애너테이션 소개
 @Entity
 @Table(name = "Students")
 public class Student {
@@ -23,7 +24,7 @@ public class Student {
     @Column(name = "FirstName", nullable = false)
     private String firstName;
     
-    @Column(name = "LastName")
+    @Column(name = "LastName", length = 20)
     private String lastName; 
 
     @Column(name = "Email", nullable = true)
