@@ -1,4 +1,5 @@
 # JavaCampus - 자바캠퍼스 
+
 https://www.javacampus.com 웹사이트 전체 소스 모음
 
 ## 유튜브 자바캠퍼스 채널
@@ -14,11 +15,6 @@ https://www.youtube.com/channel/UCK6PBLP6v1SG_CRIIX9H8NQ
 JavaCampus 프로젝트는 https://www.JavaCampus.com 사이트를 처음부터 끝까지 만들어가는 과정을 진행하는 프로젝트 리포지토리입니다.
 
 2021년 하반기에 이 사이트를 완성하는 목적으로 강의 및 소스 업데이트가 지속적으로 진행될 예정입니다.
-
-
-## 00_00_블로그로 돈벌기 프로젝트 시작
-
-https://youtu.be/8N0AYg_FY4o
 
 ## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
 
