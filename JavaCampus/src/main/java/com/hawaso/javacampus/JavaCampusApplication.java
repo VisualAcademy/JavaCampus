@@ -8,6 +8,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.metrics.buffering.BufferingApplicationStartup;
 import org.springframework.context.annotation.Bean;
 //import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -19,7 +20,12 @@ import org.springframework.web.bind.annotation.RestController;
 public class JavaCampusApplication {
 	// 스프링 부트 프로젝트의 엔트리 포인트
 	public static void main(String[] args) {
-		SpringApplication.run(JavaCampusApplication.class, args);
+		//[!] 기본 방식
+		//SpringApplication.run(JavaCampusApplication.class, args);
+		//[!!] 추가 기능 구현을 위한 방법
+		SpringApplication app = new SpringApplication(JavaCampusApplication.class);
+		app.setApplicationStartup(new BufferingApplicationStartup(10000));
+		app.run(args); 
 	}
 
 	//[!] 인라인으로 REST API 만들고 실행하기
