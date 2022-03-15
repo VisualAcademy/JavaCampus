@@ -87,14 +87,15 @@ public class Employee {
             return true;
         if (!(o instanceof Employee))
             return false;
-        Employee employee = (Employee) o;
+        Employee model = (Employee) o;
         return 
-            Objects.equals(this.id, employee.id) 
+            Objects.equals(this.id, model.id) 
             && 
-            Objects.equals(this.firstName, employee.firstName)
+            Objects.equals(this.firstName, model.firstName)
             && 
-            Objects.equals(this.lastName, employee.lastName) 
-            && Objects.equals(this.role, employee.role);
+            Objects.equals(this.lastName, model.lastName) 
+            && 
+            Objects.equals(this.role, model.role);
     }
 
     @Override
