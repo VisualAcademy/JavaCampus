@@ -8,10 +8,14 @@ import com.hawaso.javacampus.models.notices.Notice;
 public interface INoticeService {
     // 입력과 수정
     public Notice save(Notice model); // add(), update()
+    // 입력 
+    public void add(Notice model); 
     // 출력
     public List<Notice> getAll(); // findAll()
     // 상세
     public Notice getById(int id); // findById()
+    // 수정
+    public void update(Integer id, Notice model);
     // 삭제
     public void delete(int id); // deleteById()
     // 검색
