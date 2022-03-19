@@ -73,14 +73,22 @@
 
             <nav aria-label="Page navigation example">
                 <ul class="pagination justify-content-center">
-                  <li class="page-item disabled">
-                    <a class="page-link">Previous</a>
+                  <li class="page-item"
+                    th:classappend="${1 == (pageNumber + 1)} ? 'disabled'"
+                  >
+                    <a class="page-link" th:href="@{/notice(page=${pageNumber - 1})}">Previous</a>
+                  </li>                  
+                  <li class="page-item" 
+                    th:classappend="${i == (pageNumber + 1)} ? 'disabled'"
+                    th:each="i: ${#numbers.sequence(start, end)}">
+                      <a class="page-link" href="#" 
+                      th:href="@{/notice(page=${i - 1})}"
+                      th:text="${i}">1234</a>
                   </li>
-                  <li class="page-item"><a class="page-link" href="#">1</a></li>
-                  <li class="page-item"><a class="page-link" href="#">2</a></li>
-                  <li class="page-item"><a class="page-link" href="#">3</a></li>
-                  <li class="page-item">
-                    <a class="page-link" href="#">Next</a>
+                  <li class="page-item"
+                    th:classappend="${pageCount == (pageNumber + 1)} ? 'disabled'"
+                  >
+                    <a class="page-link"  th:href="@{/notice(page=${pageNumber + 1})}">Next</a>
                   </li>
                 </ul>
             </nav>

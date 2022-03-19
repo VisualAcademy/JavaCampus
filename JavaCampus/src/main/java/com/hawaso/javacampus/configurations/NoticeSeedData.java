@@ -19,6 +19,18 @@ public class NoticeSeedData {
             _log.info("Preloading: " + service.save(new Notice("홍길동", "제목1", "내용1")));
             _log.info("Preloading: " + service.save(new Notice("백두산", "제목2", "내용2")));
             _log.info("Preloading: " + service.save(new Notice("임꺽정", "제목3", "내용3")));
+            _log.info("Preloading: " + service.save(new Notice("홍길동", "제목1", "내용4")));
+            _log.info("Preloading: " + service.save(new Notice("백두산", "제목2", "내용5")));
+            _log.info("Preloading: " + service.save(new Notice("임꺽정", "제목3", "내용6")));
+            _log.info("Preloading: " + service.save(new Notice("홍길동", "제목1", "내용7")));
+            _log.info("Preloading: " + service.save(new Notice("백두산", "제목2", "내용8")));
+            _log.info("Preloading: " + service.save(new Notice("임꺽정", "제목3", "내용9")));
+            _log.info("Preloading: " + service.save(new Notice("홍길동", "제목1", "내용10")));
+            _log.info("Preloading: " + service.save(new Notice("백두산", "제목2", "내용11")));
+            _log.info("Preloading: " + service.save(new Notice("임꺽정", "제목3", "내용12")));
+            _log.info("Preloading: " + service.save(new Notice("홍길동", "제목1", "내용13")));
+            _log.info("Preloading: " + service.save(new Notice("백두산", "제목2", "내용14")));
+            _log.info("Preloading: " + service.save(new Notice("임꺽정", "제목3", "내용15")));
         };
     }
 }
