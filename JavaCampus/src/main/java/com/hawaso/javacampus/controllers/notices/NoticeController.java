@@ -3,9 +3,15 @@ package com.hawaso.javacampus.controllers.notices;
 import javax.validation.Valid;
 
 import com.hawaso.javacampus.models.notices.Notice;
+import com.hawaso.javacampus.repositories.notices.INoticeRepository;
 import com.hawaso.javacampus.services.notices.NoticeService;
 
 import org.apache.groovy.parser.antlr4.util.StringUtils;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
+import org.springframework.data.web.PageableDefault;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -19,17 +25,23 @@ import org.springframework.web.bind.annotation.RequestParam;
 @RequestMapping("/notice")
 public class NoticeController {
     private final NoticeService _service;
+    private INoticeRepository _repository;
 
     // 생성자의 매개 변수로 NoticeService 클래스 주입 
-    public NoticeController(NoticeService service) {
+    public NoticeController(NoticeService service, INoticeRepository repository) {
         this._service = service;
+        this._repository = repository;
     }
 
     // 출력: 리스트 페이지 출력 
     @GetMapping(value = { "", "/index", "/list" })
-    public String index(Model model) {
-        var models = _service.getAll(); 
-        model.addAttribute("models", models); 
+    public String index(Model model, @PageableDefault(page = 0, size = 2) Pageable pageable) {
+        int pageNumber = pageable.getPageNumber();
+        int pageSize = pageable.getPageSize();
+        Page<Notice> pages = 
+            _repository.findAll(PageRequest.of(pageNumber, pageSize, Sort.by("id").descending()));
+        //var models = _service.getAll(); 
+        model.addAttribute("models", pages); 
         return "views/notices/index";
     }
 

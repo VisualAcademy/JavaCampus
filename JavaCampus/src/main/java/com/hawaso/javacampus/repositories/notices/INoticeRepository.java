@@ -4,6 +4,8 @@ import java.util.List;
 
 import com.hawaso.javacampus.models.notices.Notice;
 
+// import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
+// import org.springframework.data.domain.Page;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -13,4 +15,6 @@ public interface INoticeRepository extends JpaRepository<Notice, Integer> {
     public List<Notice> findByOrderByNameAsc(); 
     public List<Notice> findAllByOrderByTitleAsc(); 
     public List<Notice> findByNameContainsOrTitleContainingIgnoreCase(String name, String title);
+
+    //public Page<Notice> findAllByOrderByIdDesc(Pageable pageable); // 페이징 처리 추가 
 }
