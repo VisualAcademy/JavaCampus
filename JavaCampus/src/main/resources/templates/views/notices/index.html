@@ -20,10 +20,12 @@
                     <a href="/notice/create">Create New</a>
                 </div>
                 <div class="col-xs-12 col-sm-6 col-md-4 text-right">
-                    <form action="#" th:action="@{/notice/search}" method="get">
+                    <form action="#" th:action="@{/notice/index}" method="get">
                         <div class="input-group mb-2">
                             <input type="search" name="searchQuery" id="searchQuery" 
-                                class="form-control" placeholder="Search Notice" />
+                                class="form-control" placeholder="Search Notice" 
+                                th:value="${param.searchQuery}"
+                                />
                             <div class="input-group-append">
                                 <button type="submit" class="btn btn-outline-secondary">검색</button>
                             </div>
@@ -76,19 +78,19 @@
                   <li class="page-item"
                     th:classappend="${1 == (pageNumber + 1)} ? 'disabled'"
                   >
-                    <a class="page-link" th:href="@{/notice(page=${pageNumber - 1})}">Previous</a>
+                    <a class="page-link" th:href="@{/notice(page=${pageNumber - 1}, searchQuery=${param.searchQuery})}">Previous</a>
                   </li>                  
                   <li class="page-item" 
                     th:classappend="${i == (pageNumber + 1)} ? 'disabled'"
                     th:each="i: ${#numbers.sequence(start, end)}">
                       <a class="page-link" href="#" 
-                      th:href="@{/notice(page=${i - 1})}"
+                      th:href="@{/notice(page=${i - 1}, searchQuery=${param.searchQuery})}"
                       th:text="${i}">1234</a>
                   </li>
                   <li class="page-item"
                     th:classappend="${pageCount == (pageNumber + 1)} ? 'disabled'"
                   >
-                    <a class="page-link"  th:href="@{/notice(page=${pageNumber + 1})}">Next</a>
+                    <a class="page-link"  th:href="@{/notice(page=${pageNumber + 1}, searchQuery=${param.searchQuery})}">Next</a>
                   </li>
                 </ul>
             </nav>

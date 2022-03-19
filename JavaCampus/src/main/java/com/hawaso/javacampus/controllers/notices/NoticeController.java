@@ -33,27 +33,34 @@ public class NoticeController {
         this._repository = repository;
     }
 
-    // 출력: 리스트 페이지 출력 
+    // 출력: 리스트 페이지 출력
     @GetMapping(value = { "", "/index", "/list" })
-    public String index(Model model, @PageableDefault(page = 0, size = 2) Pageable pageable) {
-        int pagerButtonCount = 5; 
-        int pageNumber = pageable.getPageNumber();
-        int pageSize = pageable.getPageSize();
-        Page<Notice> pages = 
-        _repository.findAll(PageRequest.of(pageNumber, pageSize, Sort.by("id").descending()));
-        int start = pages.getPageable().getPageNumber() / (int)pagerButtonCount * pagerButtonCount + 1;
-        int end = (pages.getPageable().getPageNumber() / (int)pagerButtonCount + 1) * pagerButtonCount;
-        int pageCount = pages.getTotalPages(); 
-        if (end >= pageCount) {
-            end = pageCount;
-        }
-        //var models = _service.getAll(); 
-        model.addAttribute("models", pages); 
-        model.addAttribute("start", start);
-        model.addAttribute("end", end);
-        model.addAttribute("pageNumber", pageNumber);
-        model.addAttribute("pageCount", pageCount);
-        return "views/notices/index";
+    public String index(Model model, @PageableDefault(page = 0, size = 2) Pageable pageable,
+            @RequestParam(name = "searchQuery", required = false, defaultValue = "") String searchQuery) {
+        // if (searchQuery.trim().isEmpty() && StringUtils.isEmpty(searchQuery)) {
+        //     return "redirect:/notice";
+        // } else {
+            int pagerButtonCount = 5;
+            int pageNumber = pageable.getPageNumber();
+            int pageSize = pageable.getPageSize();
+            //Page<Notice> pages = _repository.findAll(PageRequest.of(pageNumber, pageSize, Sort.by("id").descending()));
+            Page<Notice> pages = _repository.findByNameContainingOrTitleContainingIgnoreCase(
+                searchQuery, searchQuery, PageRequest.of(pageNumber, pageSize, Sort.by("id").descending()));
+            int start = pages.getPageable().getPageNumber() / (int) pagerButtonCount * pagerButtonCount + 1;
+            int end = (pages.getPageable().getPageNumber() / (int) pagerButtonCount + 1) * pagerButtonCount;
+            int pageCount = pages.getTotalPages();
+            if (end >= pageCount) {
+                end = pageCount;
+            }
+            // var models = _service.getAll();
+            model.addAttribute("models", pages);
+            model.addAttribute("start", start);
+            model.addAttribute("end", end);
+            model.addAttribute("pageNumber", pageNumber);
+            model.addAttribute("pageCount", pageCount);
+            // 리스트 페이지에 검색 결과 컬렉션 표시
+            return "views/notices/index";
+        //}
     }
 
     // 입력: 입력 폼 출력 
