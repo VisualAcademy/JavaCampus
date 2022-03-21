@@ -33,14 +33,15 @@ public class Notice {
     @Column(name = "Content")
     private String content;     
 
-    // 생성자
-    public Notice() {
+    // 생성자: @NoArgsConstructor
+    public Notice() {        
     }
     public Notice(String name, String title, String content) {
         this.setName(name);
         this.setTitle(title);
         this.setContent(content);
     }
+    // 생성자: @AllArgsConstructor 
     public Notice(Integer id, String name, String title, String content) {
         this.id = id;
         this.setName(name);
