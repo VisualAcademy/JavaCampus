@@ -25,26 +25,26 @@ public class EmployeesController {
         this._repository = repository;
     }
 
-    // 출력
+    // 출력: GetEmployees 
     @GetMapping("/api/employees")
     public List<Employee> all() {
         return _repository.findAll();
     }
 
-    // 입력
+    // 입력: PostEmployee 
     @PostMapping("/api/employees")
     public Employee newEmployee(@RequestBody Employee newEmployee) {
         //return _repository.saveAndFlush(newEmployee);
         return _repository.save(newEmployee);
     }
 
-    // 상세
+    // 상세: GetEmployee
     @GetMapping("/api/employees/{id}")
     public Optional<Employee> one(@PathVariable Integer id) {
         return _repository.findById(id);
     }
 
-    // 수정
+    // 수정: PutEmployee
     @PutMapping("/api/employees/{id}")
     public Employee replaceEmployee(@RequestBody Employee newEmployee, @PathVariable Integer id) {
         // 다음 2가지 방식 중 하나의 코드 사용하여 데이터 수정 
@@ -66,7 +66,7 @@ public class EmployeesController {
         }
     }
 
-    // 삭제
+    // 삭제: DeleteEmployee
     @DeleteMapping("/api/employees/{id}")
     public void deleteEmployee(@PathVariable Integer id) {
         _repository.deleteById(id);
