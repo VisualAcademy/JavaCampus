@@ -1,5 +1,6 @@
 package com.hawaso.javacampus.models.campus;
 
+import java.time.LocalDateTime;
 import java.util.List;
 
 import javax.persistence.Column;
@@ -33,6 +34,8 @@ public class Student {
     @ManyToMany(mappedBy = "students")
     @JsonIgnore
     private List<Course> courses;
+
+    private LocalDateTime created; 
     
     public Student() {
         
@@ -97,5 +100,13 @@ public class Student {
 
     public void setCourses(List<Course> courses) {
         this.courses = courses;
+    }
+
+    public LocalDateTime getCreated() {
+        return created;
+    }
+
+    public void setCreated(LocalDateTime created) {
+        this.created = created;
     }
 }
