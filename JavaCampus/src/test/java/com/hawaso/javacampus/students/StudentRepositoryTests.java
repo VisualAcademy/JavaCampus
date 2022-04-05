@@ -1,4 +1,4 @@
-package com.hawaso.javacampus.repositories;
+package com.hawaso.javacampus.students;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
