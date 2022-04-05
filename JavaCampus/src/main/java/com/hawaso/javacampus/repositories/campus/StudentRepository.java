@@ -17,4 +17,6 @@ public interface StudentRepository extends JpaRepository<Student, Integer> {
     
     // Select * From Students Where Upper(FirstName) = Upper(?)
     List<Student> findByFirstNameIgnoreCase(String string);
+
+    List<Student> findByEmail(String email);
 }
