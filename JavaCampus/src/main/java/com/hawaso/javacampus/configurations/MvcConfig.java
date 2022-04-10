@@ -12,5 +12,11 @@ public class MvcConfig implements WebMvcConfigurer {
         registry.addViewController("/learn").setViewName("views/learn");
         registry.addViewController("/quickstart").setViewName("views/quickstart");
         registry.addViewController("/guides").setViewName("views/guides");
+
+        // Spring Security 연습용 코드 
+		// registry.addViewController("/home").setViewName("home");
+		// registry.addViewController("/").setViewName("home");
+		// registry.addViewController("/hello").setViewName("hello");
+		// registry.addViewController("/login").setViewName("login");
     }
 }
