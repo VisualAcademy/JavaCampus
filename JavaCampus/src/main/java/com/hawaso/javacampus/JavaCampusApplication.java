@@ -31,7 +31,7 @@ public class JavaCampusApplication {
 	//[!] 인라인으로 REST API 만들고 실행하기
 	//[1] /api/creator 경로 요청하면 "RedPlus" 문자열 출력
 	@RestController	
-	@RequestMapping("/api")
+	@RequestMapping("/api") // [Route]
 	public class CreatorController {
 		@GetMapping("/creator")
 		public String getCreator() {
@@ -41,7 +41,7 @@ public class JavaCampusApplication {
 	//[2] /api/name 경로 요청하면 "박용준" 문자열 출력
 	@RestController
 	public class NameController {
-		@RequestMapping("/api/name")
+		@RequestMapping("/api/name") // [Route] => [HttpGet]
 		public String getName() {
 			return "박용준";
 		}
@@ -50,7 +50,7 @@ public class JavaCampusApplication {
 	// 스프링 부트 DevTools 테스트
 	@RestController
 	public class DevToolsTestController {
-		@GetMapping("/devtoolstest")
+		@GetMapping("/devtoolstest") // [HttpGet], [HttpPost], [HttpPut], [HttpDelete]
 		public String index() {
 			return "DevTools Test - Update - Update - Update";
 		}
@@ -59,22 +59,22 @@ public class JavaCampusApplication {
 	// 스프링 부트 프로젝트 처음 가동할 때 Shirt 개체 미리 생성
 	private static final Logger log = LoggerFactory.getLogger(JavaCampusApplication.class);
 
-	@Bean
-	public CommandLineRunner makeDefaultShirts(ShirtRepository repository) {
-	  return (args) -> {
-		// save a few shirts
-		repository.save(new Shirt("JavaCampus"));
-		repository.save(new Shirt("VisualAcademy"));
-		repository.save(new Shirt("DevLec"));
-		repository.save(new Shirt("Hawaso"));
+    @Bean
+    CommandLineRunner makeDefaultShirts(ShirtRepository repository) {
+        return (args) -> {
+            // save a few shirts
+            repository.save(new Shirt("JavaCampus"));
+            repository.save(new Shirt("VisualAcademy"));
+            repository.save(new Shirt("DevLec"));
+            repository.save(new Shirt("Hawaso"));
 
-		// fetch all shirts
-		log.info("Shirts found with findAll():");
-		log.info("-------------------------------");
-		for (Shirt shirt : repository.findAll()) {
-		  log.info(shirt.toString());
-		}
-		log.info("");
-	  };
-	} 
+            // fetch all shirts
+            log.info("Shirts found with findAll():");
+            log.info("-------------------------------");
+            for (Shirt shirt : repository.findAll()) {
+                log.info(shirt.toString());
+            }
+            log.info("");
+        };
+    } 
 }
