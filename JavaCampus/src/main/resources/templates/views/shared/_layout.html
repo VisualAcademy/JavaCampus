@@ -119,27 +119,11 @@
         <p>내용 들어오는 곳...</p>
     </div>
 
-    <!-- Footer -->
-    <footer class="py-5 bg-dark mt-auto">
-        <div class="container">
-            <p class="m-0 text-center text-white">Copyright &copy; JavaCampus 2022 All rights reserved.</p>
-        </div>
-        <!-- <div class="container">
-      <p class="m-0 text-center text-white">
-        <a href="https://docs.spring.io/spring-boot/docs/current-SNAPSHOT/reference/htmlsingle/">
-          Spring Boot Reference Documentation
-        </a>
-      </p>
-    </div> -->
-        <div class="container">
-            <p class="m-0 text-center text-white">
-                <a href="https://startbootstrap.com/" class="text-white small">
-                    Bootstrap Template by Start Bootstrap
-                </a>
-            </p>
-        </div>
-        <!-- /.container -->
+
+    <footer th:replace="views/shared/fragments/_footer :: footer">
+        푸터 들어오는 곳 
     </footer>
+
 
     <!-- Bootstrap core JavaScript -->
     <script th:src="@{/vendor/jquery/jquery.min.js}"></script>
