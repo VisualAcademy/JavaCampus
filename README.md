@@ -32,6 +32,13 @@ https://youtu.be/x_AqRYJiXI4
 > [!Video https://www.youtube.com/embed/x_AqRYJiXI4]
 
 
+## 스프링 이니셜라이저 사이트에서 자바캠퍼스 프로젝트 만들고 로컬에서 8080 포트로 실행해보기
+
+https://youtu.be/pHUdGyUsXDA
+
+> [!Video https://www.youtube.com/embed/pHUdGyUsXDA]
+
+
 ## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
 
 ## 01_02.JavaCampus 가상 컴퓨터에 접속하기
