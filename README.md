@@ -39,6 +39,14 @@ https://youtu.be/pHUdGyUsXDA
 > [!Video https://www.youtube.com/embed/pHUdGyUsXDA]
 
 
+## JavaCampus 프로젝트 진행사항 - 스프링 부트 강의, 스프링 부트 강좌
+
+https://youtu.be/_gtgoNs7pbc
+
+> [!Video https://www.youtube.com/embed/_gtgoNs7pbc]
+
+
+
 ## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
 
 ## 01_02.JavaCampus 가상 컴퓨터에 접속하기
