@@ -53,6 +53,12 @@ https://youtu.be/kpysmqKPY7M
 > [!Video https://www.youtube.com/embed/kpysmqKPY7M]
 
 
+스프링부트 00_01강. Windows 10 운영체제에 자바 및 스프링부트 개발 환경 구축하고 Hello World 실행하기
+
+https://youtu.be/MEnuFPhLFjo
+
+> [!Video https://www.youtube.com/embed/MEnuFPhLFjo]
+
 
 ## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
 
