@@ -53,7 +53,7 @@ https://youtu.be/kpysmqKPY7M
 > [!Video https://www.youtube.com/embed/kpysmqKPY7M]
 
 
-스프링부트 00_01강. Windows 10 운영체제에 자바 및 스프링부트 개발 환경 구축하고 Hello World 실행하기
+## Windows 10 운영체제에 자바 및 스프링부트 개발 환경 구축하고 Hello World 실행하기
 
 https://youtu.be/MEnuFPhLFjo
 
