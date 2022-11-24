@@ -59,6 +59,11 @@ https://youtu.be/MEnuFPhLFjo
 
 > [!Video https://www.youtube.com/embed/MEnuFPhLFjo]
 
+## 스프링부트 00_02강 스프링 개발 환경 구축 및 Hello World 페이지 출력 데모
+
+https://youtu.be/EoEdkHDkaMM
+
+> [!Video https://www.youtube.com/embed/EoEdkHDkaMM]
 
 ## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
 
