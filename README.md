@@ -65,6 +65,12 @@ https://youtu.be/EoEdkHDkaMM
 
 > [!Video https://www.youtube.com/embed/EoEdkHDkaMM]
 
+## 스프링 부트 00_03강. 미리보기 인텔리제이 커뮤니티 버전을 사용하여 스프링 부트 프로젝트 개발하고 실행하기 데모
+
+https://youtu.be/BE2Pg2I26lc
+
+> [!Video https://www.youtube.com/embed/BE2Pg2I26lc]
+
 ## 01_01_Spring Boot 학습을 위한 Windows 10 가상 컴퓨터 및 Azure Web App 만들기
 
 ## 01_02.JavaCampus 가상 컴퓨터에 접속하기
