@@ -85,6 +85,12 @@ https://youtu.be/BE2Pg2I26lc
 
 ## 01_07_Spring Quickstart Guide_스프링 부트 헬로 월드
 
+스프링 부트 01_07강. Spring Quickstart Guide_스프링 부트 헬로 월드 - 스프링 부트 강의, 스프링 부트 강좌
+
+https://youtu.be/E8483J0l7z0
+
+> [!Video https://www.youtube.com/embed/E8483J0l7z0]
+
 ## 01_08_스프링 MVC 사용 데모_Serving Web Content with Spring MVC_Spring MVC로 웹 컨텐츠 제공
 
 ## 02_01_데모_Spring Initializr 웹 사이트를 사용하여 Spring Boot 프로젝트 생성 및 로컬 실행
