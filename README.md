@@ -93,6 +93,10 @@ https://youtu.be/E8483J0l7z0
 
 ## 01_08_스프링 MVC 사용 데모_Serving Web Content with Spring MVC_Spring MVC로 웹 컨텐츠 제공
 
+https://youtu.be/a4Ldt7EewFA
+
+> [!Video https://www.youtube.com/embed/a4Ldt7EewFA]
+
 ## 02_01_데모_Spring Initializr 웹 사이트를 사용하여 Spring Boot 프로젝트 생성 및 로컬 실행
 
 ## 02_02_데모_Visual Studio Code에서 Spring Boot Hello World 데모 프로젝트 생성 및 실행 그리고 index 페이지 추가
