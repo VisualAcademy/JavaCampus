@@ -97,6 +97,14 @@ https://youtu.be/a4Ldt7EewFA
 
 > [!Video https://www.youtube.com/embed/a4Ldt7EewFA]
 
+
+## 01_09강. 명령 프롬프트에서 Java와 Maven 버전 확인
+
+https://youtu.be/dHIGM6ooFa8
+
+> [!Video https://www.youtube.com/embed/dHIGM6ooFa8]
+
+
 ## 02_01_데모_Spring Initializr 웹 사이트를 사용하여 Spring Boot 프로젝트 생성 및 로컬 실행
 
 ## 02_02_데모_Visual Studio Code에서 Spring Boot Hello World 데모 프로젝트 생성 및 실행 그리고 index 페이지 추가
