@@ -104,6 +104,11 @@ https://youtu.be/dHIGM6ooFa8
 
 > [!Video https://www.youtube.com/embed/dHIGM6ooFa8]
 
+## 01_10강. 미리보기_스프링 부트로 제작할 자바캠퍼스 프로젝트의 시작 부분 소스를 다운로드 후 로컬에서 실행해보기
+
+https://youtu.be/Gro8R17r3uE
+
+> [!Video https://www.youtube.com/embed/Gro8R17r3uE]
 
 ## 02_01_데모_Spring Initializr 웹 사이트를 사용하여 Spring Boot 프로젝트 생성 및 로컬 실행
 
