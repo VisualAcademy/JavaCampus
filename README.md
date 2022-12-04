@@ -118,6 +118,10 @@ https://youtu.be/ITcfISNGwPI
 
 ## 02_02_데모_Visual Studio Code에서 Spring Boot Hello World 데모 프로젝트 생성 및 실행 그리고 index 페이지 추가
 
+https://youtu.be/UbcMSzzeZSI
+
+> [!Video https://www.youtube.com/embed/UbcMSzzeZSI]
+
 ## 02_03_참고_로컬 컴퓨터에 Git 전역 사용자 이름과 이메일 정보 추가
 
 ## 02_04_참고_GitHub에 JavaCampus 리포지토리 생성
