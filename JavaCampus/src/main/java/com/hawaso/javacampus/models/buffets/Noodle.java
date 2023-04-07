@@ -1,27 +1,39 @@
 package com.hawaso.javacampus.models.buffets;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import javax.validation.constraints.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Noodle {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id; 
+    private int id;
 
+    @NotNull
+    @Size(max = 25)
     private String name;
 
-    private String description; 
+    @NotNull
+    @Column(name = "broth_id")
+    private Integer brothId;
 
-    public Integer getId() {
+    @ManyToOne
+    @JoinColumn(name = "broth_id", insertable = false, updatable = false)
+    private Broth broth;
+
+    @OneToMany(mappedBy = "noodle", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<Garnish> garnishes = new ArrayList<>();
+
+    // Getters and Setters
+    public int getId() {
         return id;
     }
-    
-    public void setId(Integer id) {
+
+    public void setId(int id) {
         this.id = id;
-    } 
+    }
 
     public String getName() {
         return name;
@@ -30,12 +42,28 @@ public class Noodle {
     public void setName(String name) {
         this.name = name;
     }
-    
-    public String getDescription() {
-        return description;
+
+    public Integer getBrothId() {
+        return brothId;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setBrothId(Integer brothId) {
+        this.brothId = brothId;
+    }
+
+    public Broth getBroth() {
+        return broth;
+    }
+
+    public void setBroth(Broth broth) {
+        this.broth = broth;
+    }
+
+    public List<Garnish> getGarnishes() {
+        return garnishes;
+    }
+
+    public void setGarnishes(List<Garnish> garnishes) {
+        this.garnishes = garnishes;
     }
 }
