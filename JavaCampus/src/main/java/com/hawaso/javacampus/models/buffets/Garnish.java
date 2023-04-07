@@ -3,6 +3,7 @@ package com.hawaso.javacampus.models.buffets;
 import javax.persistence.*;
 import javax.validation.constraints.*;
 
+// 고명(소스) 모델 클래스
 @Entity
 public class Garnish {
     @Id
@@ -16,6 +17,7 @@ public class Garnish {
     @Column(name = "noodle_id")
     private Integer noodleId;
 
+    // 각 소스는 특정 국수에 속함
     @ManyToOne
     @JoinColumn(name = "noodle_id", insertable = false, updatable = false)
     private Noodle noodle;

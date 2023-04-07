@@ -5,6 +5,7 @@ import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// 국물(육수) 모델 클래스
 @Entity
 @Table(name = "Broths")
 public class Broth {
@@ -18,9 +19,11 @@ public class Broth {
 
     private boolean IsVegan;
 
+    // 한 육수에 여러 가지 국수가 포함될 수 있음
     @OneToMany(mappedBy = "broth")
     private List<Noodle> noodles = new ArrayList<>();
 
+    // getter와 setter
     public int getId() {
         return id;
     }

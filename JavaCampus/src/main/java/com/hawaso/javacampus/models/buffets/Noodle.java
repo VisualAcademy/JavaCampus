@@ -5,6 +5,7 @@ import javax.validation.constraints.*;
 import java.util.ArrayList;
 import java.util.List;
 
+// 국수 모델 클래스
 @Entity
 public class Noodle {
     @Id
@@ -19,10 +20,12 @@ public class Noodle {
     @Column(name = "broth_id")
     private Integer brothId;
 
+    // 국수는 특정 육수에 속함
     @ManyToOne
     @JoinColumn(name = "broth_id", insertable = false, updatable = false)
     private Broth broth;
 
+     // 한 국수에 여러 가지 소스가 포함될 수 있음
     @OneToMany(mappedBy = "noodle", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Garnish> garnishes = new ArrayList<>();
 
