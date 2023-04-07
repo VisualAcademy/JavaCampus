@@ -6,6 +6,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
+@Table(name = "Broths")
 public class Broth {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -15,7 +16,7 @@ public class Broth {
     @Size(max = 25)
     private String name;
 
-    private boolean isVegan;
+    private boolean IsVegan;
 
     @OneToMany(mappedBy = "broth")
     private List<Noodle> noodles = new ArrayList<>();
@@ -36,12 +37,12 @@ public class Broth {
         this.name = name;
     }
 
-    public boolean isVegan() {
-        return isVegan;
+    public boolean getIsVegan() {
+        return IsVegan;
     }
 
-    public void setVegan(boolean isVegan) {
-        this.isVegan = isVegan;
+    public void setIsVegan(boolean isVegan) {
+        IsVegan = isVegan;
     }
 
     public List<Noodle> getNoodles() {

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko" 
+xmlns:th="http://www.thymeleaf.org" 
+xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{views/shared/_layout}">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Broths</title>
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container mt-3">
+            <div class="row">
+                <div class="col-md-8">
+                    <h1>Broths</h1>
+                </div>
+                <div class="col-md-4 text-right">
+                    <a class="btn btn-success" href="/broths/create" role="button">Add New Broth</a>
+                </div>
+            </div>
+            <hr>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-hover table-bordered">
+                        <thead>
+                            <tr>
+                                <th>ID</th>
+                                <th>Name</th>
+                                <th>Vegan</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr th:each="broth : ${broths}">
+                                <td th:text="${broth.id}">1</td>
+                                <td th:text="${broth.name}">Tonkotsu Ramen</td>
+                                <td th:text="${broth.isVegan}">true</td>
+                                <td>
+                                    <a class="btn btn-primary btn-sm" th:href="@{/buffets/broths/details(id=${broth.id})}" role="button">Details</a>
+                                    <a class="btn btn-warning btn-sm" th:href="@{/buffets/broths/edit(id=${broth.id})}" role="button">Edit</a>
+                                    <a class="btn btn-danger btn-sm" th:href="@{/buffets/broths/delete(id=${broth.id})}" onclick="return confirm('Are you sure to delete this broth?')" role="button">Delete</a>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
