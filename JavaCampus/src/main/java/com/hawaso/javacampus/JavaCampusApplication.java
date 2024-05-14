@@ -28,6 +28,14 @@ public class JavaCampusApplication {
 		app.run(args); 
 	}
 
+	// @RestController
+	// public class HelloWorldApiController {
+	// 	@GetMapping("/api/helloworld")
+	// 	public String helloWorld() {
+	// 		return "Hello, Spring Boot!";
+	// 	}		
+	// }
+
 	//[!] 인라인으로 REST API 만들고 실행하기
 	//[1] /api/creator 경로 요청하면 "RedPlus" 문자열 출력
 	@RestController	
