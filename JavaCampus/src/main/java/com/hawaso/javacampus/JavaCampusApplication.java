@@ -64,6 +64,14 @@ public class JavaCampusApplication {
 		}
 	}
 
+	@RestController
+	public class HelloController {
+		@GetMapping("/hello")
+		public String index() {
+			return "Hello, Spring!";
+		}		
+	}
+
 	// 스프링 부트 프로젝트 처음 가동할 때 Shirt 개체 미리 생성
 	private static final Logger log = LoggerFactory.getLogger(JavaCampusApplication.class);
 
