@@ -9,6 +9,10 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @RequestMapping("/api/vendors")
 public class VendorController {
+    public VendorController() {
+        super();
+    }
+
     @GetMapping()
     public String vendors() {
         return "Vendors";
