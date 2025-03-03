@@ -5,8 +5,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+// Greeting 이름으로 컨트롤러 만들기 
 @Controller
 public class GreetingController {
+	// greeting 이름으로 액션 메서드 만들기
 	@GetMapping("/greeting")
 	public String greeting(
 			@RequestParam(name = "name", required = false, defaultValue = "World") String name, // 쿼리스트링 받기
