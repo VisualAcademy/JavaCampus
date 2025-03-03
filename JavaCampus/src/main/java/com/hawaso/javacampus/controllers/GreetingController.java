@@ -15,6 +15,6 @@ public class GreetingController {
 			Model model // 컨트롤러에서 뷰 페이지로 데이터 전송
 	) {
 		model.addAttribute("name", name);
-		return "greeting";
+		return "greeting"; // JavaCampus\src\main\resources\templates\greeting.html
 	}
 }
