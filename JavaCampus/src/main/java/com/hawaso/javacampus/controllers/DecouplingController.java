@@ -16,7 +16,8 @@ public class DecouplingController {
 
     //[3] 생성자의 매개 변수로 주입
     private DecouplingService _service;
-    @Autowired
+    
+    // 생성자 주입 - @Autowired 생략 가능 
     public DecouplingController(DecouplingService ds) {
         _service = ds; 
     }
