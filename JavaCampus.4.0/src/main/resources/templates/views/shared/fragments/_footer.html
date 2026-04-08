@@ -1,0 +1,32 @@
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<footer class="bg-dark text-white py-5 mt-auto" th:fragment="footer">
+    <div class="container">
+        <div class="row g-4 align-items-start">
+            <div class="col-lg-5">
+                <h5 class="fw-semibold mb-3">JavaCampus(DevLec)</h5>
+                <p class="mb-2 text-white-50">2026년 기준 Spring Boot 4.0.5, Thymeleaf, Bootstrap 5, JPA, H2 예제를 한곳에 모아 학습과 데모를 함께 확인할 수 있도록 구성한 샘플 프로젝트입니다.</p>
+                <p class="mb-0 text-white-50">단순 예제 나열이 아니라 화면, 데이터, API, 폼 처리 흐름을 실제 프로젝트처럼 살펴볼 수 있도록 정리했습니다.</p>
+            </div>
+            <div class="col-sm-6 col-lg-3">
+                <h6 class="text-uppercase fw-semibold mb-3">바로가기</h6>
+                <ul class="list-unstyled small mb-0 vstack gap-2">
+                    <li><a th:href="@{/}" href="/">홈</a></li>
+                    <li><a th:href="@{/guide}" href="/guide">학습 가이드</a></li>
+                    <li><a th:href="@{/notice}" href="/notice">공지 관리</a></li>
+                    <li><a th:href="@{/employee}" href="/employee">직원 관리</a></li>
+                </ul>
+            </div>
+            <div class="col-sm-6 col-lg-4">
+                <h6 class="text-uppercase fw-semibold mb-3">참고 자료</h6>
+                <ul class="list-unstyled small mb-0 vstack gap-2">
+                    <li><a href="https://docs.spring.io/spring-boot/documentation.html" target="_blank" rel="noreferrer">Spring Boot 공식 문서</a></li>
+                    <li><a href="https://www.thymeleaf.org/documentation.html" target="_blank" rel="noreferrer">Thymeleaf 문서</a></li>
+                    <li><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" target="_blank" rel="noreferrer">Bootstrap 5 문서</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr class="border-secondary my-4">
+        <p class="mb-0 small text-center text-white-50">© 2026 JavaCampus(DevLec). 학습과 시연을 위한 샘플 프로젝트.</p>
+    </div>
+</footer>
+</html>

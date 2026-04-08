@@ -1,0 +1,5 @@
+/*스크롤바는 기본적으로 자리를 표시함*/
+html {
+    overflow: -moz-scrollbars-vertical;
+    overflow-y: scroll;
+}

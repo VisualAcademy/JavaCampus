@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+    layout:decorate="~{views/shared/_layout}">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Create Broth</title>
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+</head>
+
+<body>
+    <div layout:fragment="content">
+        <div class="container">
+
+            <h1>Create Broth</h1>
+            <form method="post" th:object="${broth}" th:action="@{/broths/create}">
+                <div class="mb-3">
+                    <label for="name" class="form-label">Name:</label>
+                    <input type="text" class="form-control" id="name" name="name" th:field="*{name}" required />
+                </div>
+                <div class="mb-3">
+                    <label class="form-check-label">Is Vegan:</label>
+                    <div class="form-check">
+                        <input type="checkbox" class="form-check-input" id="isVegan" name="isVegan"
+                            th:checked="${broth.isVegan}" th:field="*{isVegan}" />
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Create</button>
+                <a href="/broths" class="btn btn-secondary">Cancel</a>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
