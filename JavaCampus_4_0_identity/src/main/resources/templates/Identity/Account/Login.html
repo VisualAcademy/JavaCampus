@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/shared/_layout}">
+<head>
+    <title>로그인</title>
+</head>
+<body>
+<section layout:fragment="content" class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-6 col-xl-5">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-lg-5">
+                    <div class="text-center mb-4">
+                        <h1 class="h3 fw-bold mb-2">JavaCampus 로그인</h1>
+                        <p class="text-secondary mb-0">Hawaso의 ASP.NET Core Identity 흐름을 참고하여 Spring Boot 4 환경에 맞게 구성한 로그인 화면입니다.</p>
+                    </div>
+
+                    <div th:if="${statusMessage}" class="alert alert-success" th:text="${statusMessage}">상태 메시지</div>
+                    <div th:if="${loginErrorMessage}" class="alert alert-danger" th:text="${loginErrorMessage}">로그인 오류</div>
+
+                    <form method="post" th:action="@{/Identity/Account/Login}" class="vstack gap-3">
+                        <div>
+                            <label for="userName" class="form-label">사용자 이름</label>
+                            <input id="userName" name="username" type="text" class="form-control" placeholder="Administrator" autofocus>
+                        </div>
+                        <div>
+                            <label for="password" class="form-label">비밀번호</label>
+                            <input id="password" name="password" type="password" class="form-control" placeholder="비밀번호를 입력하세요">
+                        </div>
+                        <div class="form-check">
+                            <input id="remember-me" name="remember-me" type="checkbox" class="form-check-input">
+                            <label for="remember-me" class="form-check-label">로그인 상태 유지</label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-lg w-100">로그인</button>
+                    </form>
+
+                    <hr class="my-4">
+                    <div class="small text-secondary mb-2">기본 관리자 계정</div>
+                    <div class="bg-light border rounded p-3 small">
+                        <div><strong>ID</strong>: Administrator</div>
+                        <div><strong>Password</strong>: Pa$$w0rd</div>
+                    </div>
+                    <div class="mt-4 text-center">
+                        <a th:href="@{/Identity/Account/Register}" href="/Identity/Account/Register">새 계정 만들기</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

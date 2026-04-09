@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/shared/_layout}">
+<head>
+    <title>회원정보</title>
+</head>
+<body>
+<section layout:fragment="content" class="container py-4">
+    <div class="page-intro mb-4">
+        <h1 class="fw-bold">회원정보</h1>
+        <p class="text-secondary mb-0">현재 로그인한 사용자의 계정 정보와 역할을 확인하는 페이지입니다. ASP.NET Core Identity의 Manage/Index 흐름을 참고해 JavaCampus 방식으로 구성했습니다.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-7">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-semibold mb-3">기본 프로필</h2>
+                    <dl class="row mb-0">
+                        <dt class="col-sm-4">표시 이름</dt>
+                        <dd class="col-sm-8" th:text="${currentUser.displayName}">표시 이름</dd>
+                        <dt class="col-sm-4">사용자 이름</dt>
+                        <dd class="col-sm-8" th:text="${currentUser.userName}">사용자 이름</dd>
+                        <dt class="col-sm-4">이메일</dt>
+                        <dd class="col-sm-8" th:text="${currentUser.email}">이메일</dd>
+                        <dt class="col-sm-4">사용자 ID</dt>
+                        <dd class="col-sm-8 text-break" th:text="${currentUser.id}">ID</dd>
+                    </dl>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-semibold mb-3">권한 정보</h2>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item px-0 d-flex justify-content-between align-items-center" th:each="role : ${currentUserRoles}">
+                            <span th:text="${role}">Users</span>
+                            <span class="badge text-bg-primary rounded-pill">Role</span>
+                        </li>
+                        <li class="list-group-item px-0 text-secondary" th:if="${#lists.isEmpty(currentUserRoles)}">연결된 역할이 없습니다.</li>
+                    </ul>
+                    <div class="alert alert-light border mt-4 mb-0 small">
+                        <strong>안내</strong><br>
+                        기본 관리자 계정은 <code>Administrators</code>와 <code>Users</code> 역할을 함께 갖도록 설정되어 있습니다.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

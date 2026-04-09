@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/shared/_layout}">
+<head>
+    <title>관리자 대시보드</title>
+</head>
+<body>
+<section layout:fragment="content" class="container py-4">
+    <div class="page-intro mb-4">
+        <span class="badge text-bg-danger mb-3">Administrators Only</span>
+        <h1 class="fw-bold">관리자 대시보드</h1>
+        <p class="text-secondary mb-0">JavaCampus에서 역할 기반 인증이 정상 동작하는지 확인하기 위한 관리자 전용 페이지입니다. 이 화면은 <code>Administrators</code> 역할이 있는 사용자만 접근할 수 있습니다.</p>
+    </div>
+
+    <div class="row g-4">
+        <div class="col-lg-8">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-semibold mb-3">현재 로그인한 관리자</h2>
+                    <p class="mb-2"><strong>표시 이름:</strong> <span th:text="${currentUser != null ? currentUser.displayName : '-'}">기본 관리자</span></p>
+                    <p class="mb-2"><strong>사용자 이름:</strong> <span th:text="${currentUser != null ? currentUser.userName : '-'}">Administrator</span></p>
+                    <p class="mb-0"><strong>역할:</strong>
+                        <span th:each="role, stat : ${currentUserRoles}">
+                            <span class="badge text-bg-dark me-1" th:text="${role}">Administrators</span>
+                        </span>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-4">
+            <div class="card border-0 shadow-sm h-100">
+                <div class="card-body p-4">
+                    <h2 class="h5 fw-semibold mb-3">테스트 체크리스트</h2>
+                    <ul class="small text-secondary mb-0 vstack gap-2">
+                        <li>Administrator / Pa$$w0rd 로그인</li>
+                        <li>회원정보 페이지 진입</li>
+                        <li>대시보드 접근 성공</li>
+                        <li>일반 사용자 계정으로는 접근 거부 확인</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/shared/_layout}">
+<head>
+    <title>접근 거부</title>
+</head>
+<body>
+<section layout:fragment="content" class="container py-5 text-center">
+    <div class="mx-auto" style="max-width: 720px;">
+        <div class="display-6 fw-bold mb-3">접근 권한이 없습니다.</div>
+        <p class="text-secondary mb-4">요청하신 페이지는 관리자 권한 또는 로그인 상태가 필요합니다. 다른 계정으로 로그인하거나 홈으로 이동해 주세요.</p>
+        <div class="d-flex justify-content-center gap-2 flex-wrap">
+            <a class="btn btn-primary" th:href="@{/Identity/Account/Login}" href="/Identity/Account/Login">로그인</a>
+            <a class="btn btn-outline-secondary" th:href="@{/}" href="/">홈으로 이동</a>
+        </div>
+    </div>
+</section>
+</body>
+</html>

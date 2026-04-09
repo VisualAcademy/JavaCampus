@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ko"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorate="~{views/shared/_layout}">
+<head>
+    <title>회원가입</title>
+</head>
+<body>
+<section layout:fragment="content" class="container py-4">
+    <div class="row justify-content-center">
+        <div class="col-lg-7 col-xl-6">
+            <div class="card border-0 shadow-sm">
+                <div class="card-body p-4 p-lg-5">
+                    <div class="mb-4 text-center">
+                        <h1 class="h3 fw-bold mb-2">JavaCampus 회원가입</h1>
+                        <p class="text-secondary mb-0">학습용 계정을 생성한 뒤 공용 기능과 사용자 정보를 바로 확인할 수 있습니다.</p>
+                    </div>
+
+                    <form th:action="@{/Identity/Account/Register}" th:object="${registerInputModel}" method="post" class="vstack gap-3">
+                        <div th:if="${#fields.hasGlobalErrors()}" class="alert alert-danger">
+                            <div th:each="err : ${#fields.globalErrors()}" th:text="${err}">오류</div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="displayName">표시 이름</label>
+                            <input id="displayName" th:field="*{displayName}" class="form-control" placeholder="홍길동">
+                            <div class="text-danger small mt-1" th:errors="*{displayName}"></div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="userName">사용자 이름</label>
+                            <input id="userName" th:field="*{userName}" class="form-control" placeholder="honggildong">
+                            <div class="text-danger small mt-1" th:errors="*{userName}"></div>
+                        </div>
+                        <div>
+                            <label class="form-label" for="email">이메일</label>
+                            <input id="email" th:field="*{email}" class="form-control" placeholder="student@javacampus.local">
+                            <div class="text-danger small mt-1" th:errors="*{email}"></div>
+                        </div>
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <label class="form-label" for="password">비밀번호</label>
+                                <input id="password" th:field="*{password}" type="password" class="form-control">
+                                <div class="text-danger small mt-1" th:errors="*{password}"></div>
+                            </div>
+                            <div class="col-md-6">
+                                <label class="form-label" for="confirmPassword">비밀번호 확인</label>
+                                <input id="confirmPassword" th:field="*{confirmPassword}" type="password" class="form-control">
+                                <div class="text-danger small mt-1" th:errors="*{confirmPassword}"></div>
+                            </div>
+                        </div>
+                        <button type="submit" class="btn btn-success btn-lg">회원가입</button>
+                    </form>
+
+                    <div class="mt-4 text-center">
+                        이미 계정이 있으신가요?
+                        <a th:href="@{/Identity/Account/Login}" href="/Identity/Account/Login">로그인으로 이동</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+</body>
+</html>
